@@ -1,0 +1,19 @@
+<configuration>
+  <!-- Console appender with columnar layout -->
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>
+        %d{yyyy-MM-dd HH:mm:ss} │ %-4level │ %-45.45logger{36} │ %-35.35thread │ %msg%n
+      </pattern>
+    </encoder>
+  </appender>
+
+  <!-- Root logger configuration -->
+  <root level="INFO">
+    <appender-ref ref="STDOUT" />
+  </root>
+
+  <!-- Specific logger configurations -->
+  <logger name="akka" level="INFO" />
+  <logger name="com.chemist.flow" level="DEBUG" />
+</configuration>
