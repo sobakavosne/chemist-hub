@@ -20,8 +20,16 @@ lazy val root = (project in file("."))
   .settings(
     name := ".",
     libraryDependencies ++= Seq(
+      http4sEmberClient,
+      http4sEmberServer,
+      catsEffect,
+      pureconfig.cross(CrossVersion.for3Use2_13),
+      sparkCore.cross(CrossVersion.for3Use2_13),
+      sparkSql.cross(CrossVersion.for3Use2_13),
+      hadoopClient,
+      hadoopHdfs,
       scalaLogging,
-      scalaTest,
+      scalaTest
     )
   )
 
